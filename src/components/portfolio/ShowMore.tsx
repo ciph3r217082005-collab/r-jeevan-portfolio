@@ -3,8 +3,8 @@ import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 /**
- * Phone-only "read more" helpers. On tablets and computers everything is always shown;
- * below the md breakpoint long text is clamped and long lists are trimmed until expanded.
+ * "Read more" helpers. Long lists are trimmed on phones only; long text can be clamped on
+ * every screen size (3 lines on phones, 4 on larger screens) with its own toggle.
  */
 
 export function ShowMoreButton({
@@ -12,23 +12,31 @@ export function ShowMoreButton({
   onClick,
   more,
   less = "Show less",
+  allSizes = false,
   className,
 }: {
   open: boolean;
   onClick: () => void;
   more: string;
   less?: string;
+  /** Show the toggle on tablets and computers too, not just phones. */
+  allSizes?: boolean;
   className?: string;
 }) {
   return (
-    <button type="button" onClick={onClick} aria-expanded={open} className={cn("btn-more md:hidden", className)}>
+    <button
+      type="button"
+      onClick={onClick}
+      aria-expanded={open}
+      className={cn("btn-more", !allSizes && "md:hidden", className)}
+    >
       {open ? less : more}
       <ChevronDown className={cn("h-3.5 w-3.5 transition-transform duration-300", open && "rotate-180")} />
     </button>
   );
 }
 
-/** A paragraph clamped to a few lines on phones, with a Read more toggle when it overflows. */
+/** A paragraph clamped to a few lines on every screen, with a Read more toggle when it overflows. */
 export function ClampText({ children, className }: { children: ReactNode; className?: string }) {
   const ref = useRef<HTMLParagraphElement>(null);
   const [open, setOpen] = useState(false);
@@ -46,11 +54,11 @@ export function ClampText({ children, className }: { children: ReactNode; classN
   }, [open]);
   return (
     <div>
-      <p ref={ref} className={cn(className, !open && "clamp-mobile")}>
+      <p ref={ref} className={cn(className, !open && "clamp-text")}>
         {children}
       </p>
       {(overflows || open) && (
-        <ShowMoreButton open={open} onClick={() => setOpen((o) => !o)} more="Read more" className="mt-3" />
+        <ShowMoreButton open={open} onClick={() => setOpen((o) => !o)} more="Read more" allSizes className="mt-3" />
       )}
     </div>
   );

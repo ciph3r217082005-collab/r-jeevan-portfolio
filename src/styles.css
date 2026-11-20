@@ -239,13 +239,14 @@
     padding: 0.9rem 1rem;
     background: var(--surface);
   }
-  @media (max-width: 47.99rem) {
-    .clamp-mobile {
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 3;
-      overflow: hidden;
-    }
+  .clamp-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+  @media (min-width: 48rem) {
+    .clamp-text { -webkit-line-clamp: 4; }
   }
   .chip {
     display: inline-flex;

@@ -6,9 +6,14 @@ import { ShowMoreButton, useMobileLimit } from "./ShowMore";
 export function Journey() {
   const list = useMobileLimit(3);
   return (
-    <section className="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-28">
-      <SectionHeader eyebrow="the journey" title="Milestones so far." />
-      <ol className="mt-10 border-l border-border md:mt-14">
+    <section className="mx-auto grid max-w-7xl gap-10 px-5 py-20 md:px-10 md:py-24 lg:grid-cols-[1fr_1.4fr] lg:gap-12">
+      <SectionHeader
+        eyebrow="the journey"
+        title="Milestones so far."
+        className="md:grid-cols-1 lg:sticky lg:top-32 lg:self-start"
+      />
+      <div>
+      <ol className="border-l border-border">
         {journey.map((j, i) => (
           <Reveal key={j.title} delay={i * 80} className={list.hiddenClass(i)}>
             <li className="relative py-5 pl-8 md:py-6 md:pl-10">
@@ -26,13 +31,14 @@ export function Journey() {
         more={`Show all ${journey.length} milestones`}
         className="btn-more-block mt-4"
       />
+      </div>
     </section>
   );
 }
 
 export function Contact() {
   return (
-    <section id="contact" className="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-28">
+    <section id="contact" className="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-24">
       <Reveal className="card-cyber relative overflow-hidden p-6 md:p-16">
         <div className="grid-lines absolute inset-0 opacity-40" />
         <div className="relative grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:items-end">

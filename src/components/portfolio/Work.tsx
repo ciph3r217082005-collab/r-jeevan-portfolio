@@ -5,13 +5,13 @@ import { ClampText } from "./ShowMore";
 
 export function Work() {
   return (
-    <section id="work" className="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-28">
+    <section id="work" className="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-24">
       <SectionHeader
         eyebrow="selected work"
         title="Research, disclosures & builds."
         intro="Hands-on projects where I break things, fix them and write up what I learned."
       />
-      <div className="mt-10 grid gap-5 md:mt-20 md:gap-8 lg:grid-cols-2">
+      <div className="mt-10 grid gap-5 md:mt-14 md:gap-8 lg:grid-cols-2">
         {work.map((w, i) => (
           <Reveal key={w.title} delay={(i % 2) * 120}>
             <article className="card-cyber relative flex h-full flex-col overflow-hidden p-6 md:p-10">

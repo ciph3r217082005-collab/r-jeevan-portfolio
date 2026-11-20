@@ -10,7 +10,7 @@ const tones = ["text-neon", "text-cyber", "text-matrix"];
 export function Expertise() {
   const list = useMobileLimit(3);
   return (
-    <section id="expertise" className="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-28">
+    <section id="expertise" className="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-24">
       <SectionHeader
         eyebrow="what I do"
         title={<>Offense, defense &amp; everything in between.</>}
@@ -43,7 +43,7 @@ export function Expertise() {
 export function WhyMe() {
   const list = useMobileLimit(2);
   return (
-    <section className="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-28">
+    <section className="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-24">
       <div className="grid gap-10 md:gap-12 lg:grid-cols-[1fr_1.3fr]">
         <Reveal>
           <p className="eyebrow">// why choose me</p>
@@ -74,7 +74,7 @@ export function WhyMe() {
           />
         </Reveal>
       </div>
-      <Reveal className="mt-12 grid grid-cols-2 gap-6 border-y border-border py-8 md:mt-20 md:grid-cols-4 md:gap-8 md:py-12">
+      <Reveal className="mt-12 grid grid-cols-2 gap-6 border-y border-border py-8 md:mt-16 md:grid-cols-4 md:gap-8 md:py-12">
         {counters.map((c) => (
           <div key={c.label}>
             <p className="font-display text-4xl font-bold md:text-5xl">

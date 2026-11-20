@@ -34,4 +34,4 @@ use the editor.
 - Portfolio text, links and stats live in `src/data/profile.ts`; section components in `src/components/portfolio/` read from it, so content edits never touch layout code.
 - Keep the portrait outline on its own semantic token, separate from interface accent tokens, so theme changes do not recolor it.
 - Resolve stored motion preferences through the browser-safe motion helper, so the default and explicit visitor choices can be tested independently of navigation rendering.
-- Trim long text and lists on phones only through the shared `ShowMore` helpers in `src/components/portfolio/ShowMore.tsx`, so tablets and computers always show full content.
+- Trim long text and lists only through the shared `ShowMore` helpers in `src/components/portfolio/ShowMore.tsx`: lists are trimmed on phones only, while long text toggles may apply on every screen size, so behaviour stays consistent per section.

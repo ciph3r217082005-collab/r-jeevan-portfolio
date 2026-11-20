@@ -64,7 +64,7 @@ function Terminal() {
 export function About() {
   const [open, setOpen] = useState(false);
   return (
-    <section id="about" className="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-28">
+    <section id="about" className="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-24">
       <div className="grid items-start gap-10 md:gap-14 lg:grid-cols-2">
         <Reveal>
           <Terminal />
@@ -74,12 +74,12 @@ export function About() {
           <h2 className="section-title mt-4">Hi, I'm R Jeevan — turning curiosity into security skills.</h2>
           <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground md:text-lg">
             {about.map((para, i) => (
-              <p key={para.slice(0, 24)} className={i > 0 && !open ? "max-md:hidden" : undefined}>
+              <p key={para.slice(0, 24)} className={i > 0 && !open ? "hidden" : undefined}>
                 {para}
               </p>
             ))}
           </div>
-          <ShowMoreButton open={open} onClick={() => setOpen((o) => !o)} more="Read more about me" className="mt-3" />
+          <ShowMoreButton open={open} onClick={() => setOpen((o) => !o)} more="Read more about me" allSizes className="mt-3" />
           <div className="mt-8 grid grid-cols-3 divide-x divide-border">
             {highlights.map((h) => (
               <div key={h.title} className="px-4 first:pl-0">
