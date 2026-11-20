@@ -1,23 +1,31 @@
 import { ArrowRight, Github, Linkedin, Mail, MapPin } from "lucide-react";
 import { journey, profile } from "@/data/profile";
 import { Reveal, SectionHeader } from "./Reveal";
+import { ShowMoreButton, useMobileLimit } from "./ShowMore";
 
 export function Journey() {
+  const list = useMobileLimit(3);
   return (
     <section className="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-28">
       <SectionHeader eyebrow="the journey" title="Milestones so far." />
-      <ol className="mt-14 border-l border-border">
+      <ol className="mt-10 border-l border-border md:mt-14">
         {journey.map((j, i) => (
-          <Reveal key={j.title} delay={i * 80}>
-            <li className="relative py-6 pl-10">
-              <span className="absolute -left-[7px] top-8 h-3.5 w-3.5 rounded-full border-2 border-neon bg-background" />
+          <Reveal key={j.title} delay={i * 80} className={list.hiddenClass(i)}>
+            <li className="relative py-5 pl-8 md:py-6 md:pl-10">
+              <span className="absolute -left-[7px] top-7 h-3.5 md:top-8 w-3.5 rounded-full border-2 border-neon bg-background" />
               <p className="font-mono text-xs tracking-[0.2em] text-cyber">{j.date.toUpperCase()}</p>
-              <h3 className="mt-2 text-2xl font-semibold">{j.title}</h3>
+              <h3 className="mt-2 text-xl font-semibold md:text-2xl">{j.title}</h3>
               <p className="mt-1 text-muted-foreground">{j.place}</p>
             </li>
           </Reveal>
         ))}
       </ol>
+      <ShowMoreButton
+        open={list.open}
+        onClick={list.toggle}
+        more={`Show all ${journey.length} milestones`}
+        className="btn-more-block mt-4"
+      />
     </section>
   );
 }
@@ -25,7 +33,7 @@ export function Journey() {
 export function Contact() {
   return (
     <section id="contact" className="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-28">
-      <Reveal className="card-cyber relative overflow-hidden p-8 md:p-16">
+      <Reveal className="card-cyber relative overflow-hidden p-6 md:p-16">
         <div className="grid-lines absolute inset-0 opacity-40" />
         <div className="relative grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:items-end">
           <div>
@@ -33,7 +41,7 @@ export function Contact() {
             <h2 className="mt-4 font-display text-4xl font-bold leading-[1] tracking-[-0.04em] md:text-6xl">
               This is who I am — <span className="glow-text text-neon">let's talk security.</span>
             </h2>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
               Always up for research collaborations, CTF teams and good security conversations. Let's
               find the gaps before someone else does.
             </p>

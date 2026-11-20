@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { work } from "@/data/profile";
 import { Reveal, SectionHeader } from "./Reveal";
+import { ClampText } from "./ShowMore";
 
 export function Work() {
   return (
@@ -10,13 +11,13 @@ export function Work() {
         title="Research, disclosures & builds."
         intro="Hands-on projects where I break things, fix them and write up what I learned."
       />
-      <div className="mt-20 grid gap-8 lg:grid-cols-2">
+      <div className="mt-10 grid gap-5 md:mt-20 md:gap-8 lg:grid-cols-2">
         {work.map((w, i) => (
           <Reveal key={w.title} delay={(i % 2) * 120}>
-            <article className="card-cyber relative flex h-full flex-col overflow-hidden p-8 md:p-10">
+            <article className="card-cyber relative flex h-full flex-col overflow-hidden p-6 md:p-10">
               <span
                 aria-hidden
-                className="text-outline pointer-events-none absolute -right-2 -top-8 select-none font-display text-[8rem] font-bold leading-none"
+                className="text-outline pointer-events-none absolute -right-2 -top-6 select-none font-display text-[5.5rem] md:-top-8 md:text-[8rem] font-bold leading-none"
               >
                 0{i + 1}
               </span>
@@ -25,12 +26,14 @@ export function Work() {
                 <span className="tag-neon">{w.badge.value.toUpperCase()}</span>·{" "}
                 {[w.org, w.year].filter(Boolean).join(" · ")}
               </p>
-              <h3 className="relative mt-5 text-3xl font-semibold leading-tight md:text-4xl">{w.title}</h3>
-              <p className="relative mt-4 leading-relaxed text-muted-foreground">{w.body}</p>
+              <h3 className="relative mt-5 text-2xl font-semibold leading-tight md:text-4xl">{w.title}</h3>
+              <div className="relative mt-4">
+                <ClampText className="leading-relaxed text-muted-foreground">{w.body}</ClampText>
+              </div>
               <div className="relative mt-6 grid max-w-md grid-cols-3 divide-x divide-border overflow-hidden rounded-xl border border-border">
                 {w.metrics.map((m) => (
-                  <div key={m.l} className="p-4">
-                    <p className="font-display text-xl font-bold">{m.v}</p>
+                  <div key={m.l} className="p-3 md:p-4">
+                    <p className="font-display text-lg font-bold md:text-xl">{m.v}</p>
                     <p className="text-xs text-muted-foreground">{m.l}</p>
                   </div>
                 ))}

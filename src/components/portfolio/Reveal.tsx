@@ -80,7 +80,7 @@ export function SectionHeader({
         <p className="eyebrow">// {eyebrow}</p>
         <h2 className="section-title mt-4">{title}</h2>
       </div>
-      {intro && <p className="text-lg leading-relaxed text-muted-foreground">{intro}</p>}
+      {intro && <p className="text-base leading-relaxed text-muted-foreground md:text-lg">{intro}</p>}
     </Reveal>
   );
 }

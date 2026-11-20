@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { about, highlights, terminal } from "@/data/profile";
 import { Reveal, useInView } from "./Reveal";
+import { ShowMoreButton } from "./ShowMore";
 
 function Terminal() {
   const { ref, inView } = useInView<HTMLDivElement>(0.3);
@@ -34,7 +35,7 @@ function Terminal() {
         <span className="h-3 w-3 rounded-full bg-matrix" />
         <span className="ml-3 font-mono text-xs text-muted-foreground">jeevan@sec: ~</span>
       </div>
-      <div className="min-h-[260px] space-y-1.5 p-5 font-mono text-sm">
+      <div className="min-h-[200px] space-y-1.5 p-5 font-mono text-[13px] md:min-h-[260px] md:text-sm">
         {lines.map((l, i) => {
           if (remaining <= 0) return null;
           const shown = l.text.slice(0, remaining);
@@ -61,20 +62,24 @@ function Terminal() {
 }
 
 export function About() {
+  const [open, setOpen] = useState(false);
   return (
     <section id="about" className="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-28">
-      <div className="grid items-start gap-14 lg:grid-cols-2">
+      <div className="grid items-start gap-10 md:gap-14 lg:grid-cols-2">
         <Reveal>
           <Terminal />
         </Reveal>
         <Reveal delay={150}>
           <p className="eyebrow">// whoami</p>
           <h2 className="section-title mt-4">Hi, I'm R Jeevan — turning curiosity into security skills.</h2>
-          <div className="mt-6 space-y-4 text-lg leading-relaxed text-muted-foreground">
-            {about.map((para) => (
-              <p key={para.slice(0, 24)}>{para}</p>
+          <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground md:text-lg">
+            {about.map((para, i) => (
+              <p key={para.slice(0, 24)} className={i > 0 && !open ? "max-md:hidden" : undefined}>
+                {para}
+              </p>
             ))}
           </div>
+          <ShowMoreButton open={open} onClick={() => setOpen((o) => !o)} more="Read more about me" className="mt-3" />
           <div className="mt-8 grid grid-cols-3 divide-x divide-border">
             {highlights.map((h) => (
               <div key={h.title} className="px-4 first:pl-0">
