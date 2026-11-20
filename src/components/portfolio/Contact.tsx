@@ -4,7 +4,7 @@ import { Reveal, SectionHeader } from "./Reveal";
 
 export function Journey() {
   return (
-    <section className="mx-auto max-w-7xl px-5 py-28 md:px-10">
+    <section className="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-28">
       <SectionHeader eyebrow="the journey" title="Milestones so far." />
       <ol className="mt-14 border-l border-border">
         {journey.map((j, i) => (
@@ -24,7 +24,7 @@ export function Journey() {
 
 export function Contact() {
   return (
-    <section id="contact" className="mx-auto max-w-7xl px-5 py-28 md:px-10">
+    <section id="contact" className="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-28">
       <Reveal className="card-cyber relative overflow-hidden p-8 md:p-16">
         <div className="grid-lines absolute inset-0 opacity-40" />
         <div className="relative grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:items-end">
@@ -41,22 +41,22 @@ export function Contact() {
               Connect on LinkedIn <ArrowRight className="h-4 w-4" />
             </a>
           </div>
-          <ul className="space-y-4 font-mono text-sm">
+          <ul className="space-y-2 font-mono text-sm">
             <li className="flex items-center gap-4">
               <Linkedin className="h-5 w-5 text-neon" />
-              <a href={profile.linkedin} target="_blank" rel="noreferrer" className="hover:text-neon">
+              <a href={profile.linkedin} target="_blank" rel="noreferrer" className="inline-block py-2 hover:text-neon">
                 linkedin.com/in/{profile.handle}
               </a>
             </li>
             <li className="flex items-center gap-4">
               <Mail className="h-5 w-5 text-cyber" />
-              <a href={`mailto:${profile.email}`} className="break-all hover:text-neon">
+              <a href={`mailto:${profile.email}`} className="inline-block break-all py-2 hover:text-neon">
                 {profile.email}
               </a>
             </li>
             <li className="flex items-center gap-4">
               <Github className="h-5 w-5 text-matrix" />
-              <a href={profile.github} target="_blank" rel="noreferrer" className="hover:text-neon">
+              <a href={profile.github} target="_blank" rel="noreferrer" className="inline-block py-2 hover:text-neon">
                 github.com/{profile.githubHandle}
               </a>
             </li>

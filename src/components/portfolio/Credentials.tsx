@@ -4,7 +4,7 @@ import { Reveal, SectionHeader } from "./Reveal";
 
 export function Credentials() {
   return (
-    <section id="credentials" className="mx-auto max-w-7xl px-5 py-28 md:px-10">
+    <section id="credentials" className="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-28">
       <SectionHeader
         eyebrow="credentials"
         title="Verified badges."

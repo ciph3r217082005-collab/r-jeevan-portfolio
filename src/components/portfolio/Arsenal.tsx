@@ -5,7 +5,7 @@ import { Reveal, SectionHeader } from "./Reveal";
 
 export function Arsenal() {
   return (
-    <section id="arsenal" className="mx-auto max-w-7xl px-5 py-28 md:px-10">
+    <section id="arsenal" className="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-28">
       <SectionHeader
         eyebrow="the arsenal"
         title="Tools of the trade."
@@ -40,7 +40,7 @@ const stepTones = ["text-neon", "text-cyber", "text-matrix", "text-cyber", "text
 export function Process() {
   const [active, setActive] = useState(1);
   return (
-    <section className="mx-auto max-w-7xl px-5 py-28 md:px-10">
+    <section className="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-28">
       <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr]">
         <Reveal className="lg:sticky lg:top-32 lg:self-start">
           <p className="eyebrow">// how I work</p>

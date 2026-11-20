@@ -62,7 +62,7 @@ function Terminal() {
 
 export function About() {
   return (
-    <section id="about" className="mx-auto max-w-7xl px-5 py-28 md:px-10">
+    <section id="about" className="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-28">
       <div className="grid items-start gap-14 lg:grid-cols-2">
         <Reveal>
           <Terminal />

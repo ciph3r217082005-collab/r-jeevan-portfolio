@@ -4,7 +4,7 @@ import { Reveal, SectionHeader } from "./Reveal";
 
 export function Work() {
   return (
-    <section id="work" className="mx-auto max-w-7xl px-5 py-28 md:px-10">
+    <section id="work" className="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-28">
       <SectionHeader
         eyebrow="selected work"
         title="Research, disclosures & builds."

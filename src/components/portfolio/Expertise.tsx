@@ -7,7 +7,7 @@ const tones = ["text-neon", "text-cyber", "text-matrix"];
 
 export function Expertise() {
   return (
-    <section id="expertise" className="mx-auto max-w-7xl px-5 py-28 md:px-10">
+    <section id="expertise" className="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-28">
       <SectionHeader
         eyebrow="what I do"
         title={<>Offense, defense &amp; everything in between.</>}
@@ -33,7 +33,7 @@ export function Expertise() {
 
 export function WhyMe() {
   return (
-    <section className="mx-auto max-w-7xl px-5 py-28 md:px-10">
+    <section className="mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-28">
       <div className="grid gap-12 lg:grid-cols-[1fr_1.3fr]">
         <Reveal>
           <p className="eyebrow">// why choose me</p>

@@ -105,7 +105,7 @@ export function Nav() {
               key={l.id}
               to="/"
               hash={l.id}
-              activeOptions={{ includeHash: true }}
+            activeOptions={{ includeHash: true }}
               className={cn("nav-pill", active === l.id && "nav-pill-active")}
             >
               {l.label}
@@ -134,8 +134,8 @@ export function Nav() {
             key={l.id}
             to="/"
             hash={l.id}
-              activeOptions={{ includeHash: true }}
-            className={cn("nav-pill shrink-0 !px-3 !py-1 text-xs", active === l.id && "nav-pill-active")}
+            activeOptions={{ includeHash: true }}
+            className={cn("nav-pill shrink-0 !px-3 !py-2 text-xs", active === l.id && "nav-pill-active")}
           >
             {l.label}
           </Link>
