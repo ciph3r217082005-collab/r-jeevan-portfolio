@@ -8,7 +8,7 @@ import { Hero } from "@/components/portfolio/Hero";
 import { Nav } from "@/components/portfolio/Nav";
 import { Work } from "@/components/portfolio/Work";
 
-const title = "R Jeevan — Cybersecurity Student & Security Researcher";
+const title = "R Jeevan";
 const description =
   "Portfolio of R Jeevan: VAPT, network security, cryptography and responsible disclosure. ISC2 CC, AWS & Splunk certified B.Tech CSE (Cyber Security) student at Amrita.";
 
