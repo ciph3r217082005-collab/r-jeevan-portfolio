@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Sparkles, Waves } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import { profile } from "@/data/profile";
 import { cn } from "@/lib/utils";
 import { isReducedMotionPreference } from "@/lib/motion-preference";
 
@@ -91,11 +92,12 @@ export function Nav() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/75 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-10">
         <Link to="/" hash="top" className="flex items-center gap-3">
-          <img
-            src="/rj-logo-192.png"
-            alt="RJ logo"
-            className="h-9 w-9 rounded-lg shadow-[var(--glow-cyber)]"
-          />
+          <span className="grid h-9 w-9 place-items-center rounded-lg border border-cyber/40 bg-accent font-mono text-sm font-bold text-cyber">
+            {">_"}
+          </span>
+          <span className="leading-none">
+            <span className="block font-display text-lg font-bold">{profile.brand}</span>
+          </span>
         </Link>
         <nav className="hidden items-center gap-1 rounded-full border border-border bg-background/70 px-2 py-1.5 backdrop-blur lg:flex">
           {links.map((l) => (
