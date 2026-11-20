@@ -1,23 +1,46 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { About } from "@/components/portfolio/About";
+import { Arsenal, Process } from "@/components/portfolio/Arsenal";
+import { Contact, Footer, Journey } from "@/components/portfolio/Contact";
+import { Credentials } from "@/components/portfolio/Credentials";
+import { Expertise, WhyMe } from "@/components/portfolio/Expertise";
+import { Hero } from "@/components/portfolio/Hero";
+import { Nav } from "@/components/portfolio/Nav";
+import { Work } from "@/components/portfolio/Work";
 
-// The home route ships no og:image, so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "R Jeevan — Cybersecurity Student & Security Researcher";
+const description =
+  "Portfolio of R Jeevan: VAPT, network security, cryptography and responsible disclosure. ISC2 CC, AWS & Splunk certified B.Tech CSE (Cyber Security) student at Amrita.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="overflow-x-hidden">
+      <Nav />
+      <Hero />
+      <About />
+      <WhyMe />
+      <Expertise />
+      <Process />
+      <Work />
+      <Arsenal />
+      <Credentials />
+      <Journey />
+      <Contact />
+      <Footer />
+    </main>
   );
 }

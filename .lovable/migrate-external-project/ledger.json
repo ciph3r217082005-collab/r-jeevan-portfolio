@@ -1,0 +1,10 @@
+[
+ {"capability":"code","source":"code archive (TanStack Start portfolio)","outcome":"migrate","status":"verified","next_action":"none"},
+ {"capability":"assets","source":"src/assets images","outcome":"migrate","status":"verified","next_action":"none"},
+ {"capability":"schema","source":"none detected","outcome":"not_applicable","status":"verified","next_action":"none"},
+ {"capability":"records","source":"none detected","outcome":"not_applicable","status":"verified","next_action":"none"},
+ {"capability":"auth","source":"none detected","outcome":"not_applicable","status":"verified","next_action":"none"},
+ {"capability":"external_links","source":"contact section uses mailto and LinkedIn/GitHub links","outcome":"preserve","status":"verified","next_action":"none"},
+ {"capability":"secrets","source":"none detected","outcome":"not_applicable","status":"verified","next_action":"none"},
+ {"capability":"verification","source":"tests + routes","outcome":"migrate","status":"verified","next_action":"none"}
+]

@@ -28,3 +28,9 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- Portfolio text, links and stats live in `src/data/profile.ts`; section components in `src/components/portfolio/` read from it, so content edits never touch layout code.
+- Keep the portrait outline on its own semantic token, separate from interface accent tokens, so theme changes do not recolor it.
+- Resolve stored motion preferences through the browser-safe motion helper, so the default and explicit visitor choices can be tested independently of navigation rendering.
