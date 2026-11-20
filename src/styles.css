@@ -410,20 +410,7 @@
   from { opacity: 0; }
 }
 
-/* Simpler motion: OS setting or the visitor's toggle */
+/* Animations always run in full; only the visitor's own system "reduce motion" setting calms them. */
 @media (prefers-reduced-motion: reduce) {
-  html:not(.motion-full) .page-enter { animation: none; }
+  .page-enter { animation: none; }
 }
-html.reduce-motion { scroll-behavior: auto; }
-html.reduce-motion .reveal {
-  transform: none;
-  transition: opacity 0.4s ease;
-}
-html.reduce-motion .page-enter,
-html.reduce-motion .anim-hero,
-html.reduce-motion .anim-hero-photo {
-  animation: fade-only 0.4s ease both;
-}
-html.reduce-motion .animate-marquee,
-html.reduce-motion .animate-pulse-dot { animation: none; }
-html.reduce-motion .motion-heavy { display: none; }

@@ -1,29 +1,7 @@
 import { useEffect, useState } from "react";
-import { Sparkles, Waves } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { profile } from "@/data/profile";
 import { cn } from "@/lib/utils";
-import { isReducedMotionPreference } from "@/lib/motion-preference";
-
-const KEY = "reduce-motion";
-
-function useReducedMotionToggle() {
-  const [reduced, setReduced] = useState(false);
-  useEffect(() => {
-    const saved = localStorage.getItem(KEY);
-    const initial = isReducedMotionPreference(saved);
-    setReduced(initial);
-  }, []);
-  useEffect(() => {
-    document.documentElement.classList.toggle("reduce-motion", reduced);
-  }, [reduced]);
-  const toggle = () =>
-    setReduced((r) => {
-      localStorage.setItem(KEY, r ? "0" : "1");
-      return !r;
-    });
-  return { reduced, toggle };
-}
 
 const links = [
   { id: "about", label: "About" },
@@ -85,7 +63,6 @@ function useScrollProgress() {
 }
 
 export function Nav() {
-  const { reduced, toggle } = useReducedMotionToggle();
   const active = useActiveSection();
   const progress = useScrollProgress();
   return (
@@ -113,16 +90,6 @@ export function Nav() {
           ))}
         </nav>
         <div className="flex shrink-0 items-center gap-2">
-          <button
-            type="button"
-            onClick={toggle}
-            aria-pressed={reduced}
-            aria-label={reduced ? "Turn animations back on" : "Reduce motion"}
-            title={reduced ? "Animations: reduced" : "Animations: full"}
-            className="grid h-10 w-10 place-items-center rounded-full border border-border text-muted-foreground transition-colors hover:text-neon aria-pressed:border-neon/50 aria-pressed:text-neon"
-          >
-            {reduced ? <Waves className="h-4 w-4" /> : <Sparkles className="h-4 w-4" />}
-          </button>
           <Link to="/" hash="contact" className="btn-neon !px-5 !py-2.5 text-sm">
             Get in Touch
           </Link>
