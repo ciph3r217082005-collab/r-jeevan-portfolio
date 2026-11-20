@@ -128,14 +128,14 @@ export function Nav() {
           </Link>
         </div>
       </div>
-      <nav className="flex gap-1 overflow-x-auto border-t border-border/60 px-4 py-2 lg:hidden">
+      <nav className="nav-tabs-mobile flex justify-between gap-0.5 overflow-x-auto border-t border-border/60 px-2 py-1.5 max-[359px]:px-1 sm:justify-center sm:gap-1 lg:hidden">
         {links.map((l) => (
           <Link
             key={l.id}
             to="/"
             hash={l.id}
             activeOptions={{ includeHash: true }}
-            className={cn("nav-pill shrink-0 !px-3 !py-2 text-xs", active === l.id && "nav-pill-active")}
+            className={cn("nav-pill shrink-0 !px-1.5 !py-2 text-[11px] max-[359px]:!px-1 sm:!px-3 sm:text-xs", active === l.id && "nav-pill-active")}
           >
             {l.label}
           </Link>

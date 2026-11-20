@@ -282,6 +282,9 @@
     transition: color 0.25s ease, background-color 0.25s ease;
   }
   .nav-pill:hover { color: var(--cyber); }
+  /* Phone section tabs: all six fit the row, so no scrollbar is shown. */
+  .nav-tabs-mobile { scrollbar-width: none; }
+  .nav-tabs-mobile::-webkit-scrollbar { display: none; }
   .nav-pill-active {
     background: var(--accent);
     color: var(--neon);
